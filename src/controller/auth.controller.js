@@ -5,10 +5,8 @@ const cartService = require("../services/cart.service.js");
 
 // user registration funtion {52:16}
 const register = async (req, res) => {
-  console.log("register CONTROLLER called : ",req.body);
   try {
     const user = await userService.createUser(req.body);
-    console.log("REGISTERED USER IS : ",user)
     const jwt = jwtProvider.generateToken(user._id);
     await cartService.createCart(user);
     return res
@@ -27,7 +25,6 @@ const login = async (req, res) => {
 
   try {
     const user = await userService.getUserByEmail(email);
-  // console.log("user is ", user);
 
     if (!user) {
       return res
