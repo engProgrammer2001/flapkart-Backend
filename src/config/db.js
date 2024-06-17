@@ -1,13 +1,11 @@
 const mongoose = require("mongoose")
+require('dotenv').config();
 
 
-// const mongoUrl = "mongodb://127.0.0.1:27017/mobileshop"
-const mongoUrl = "mongodb+srv://askushwaha613:Ashok8103334932@cluster0.ur6sszo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const SERVER_HOST_DB_URL = process.env.SERVER_HOST_DB_URL
 
-
-// const connectDb=()=>{
-//     return mongoose.connect(mongoUrl);
-// }
+// const mongoUrl = LOCAL_HOST_DB_URL;
+const mongoUrl = SERVER_HOST_DB_URL;
 
 const connectDb = () =>{
     mongoose.connect(mongoUrl);
