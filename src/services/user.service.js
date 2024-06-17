@@ -19,6 +19,7 @@ const createUser = async (userData) => {
     // console.log("created User is ", user);
     return user;
   } catch (error) {
+    console.log(error);
     throw new Error(error.message);
   }
 };

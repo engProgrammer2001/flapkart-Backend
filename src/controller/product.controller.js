@@ -32,7 +32,7 @@ const productService = require("../services/product.service.js");
 
 // new code
 async function createProduct(req, res) {
-  console.log("create product called 2 : ", req.body);
+  // console.log("create product called 2 : ", req.body);
   try {
     const product = await productService.createProduct(req.body);
     return res.status(201).json(product);

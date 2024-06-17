@@ -19,7 +19,7 @@ const getUserProfile = async (req, res) => {
 const getAllUsers = async (req, res) => {
   try {
     const users = await userService.getAllUsers();
-    console.log("All users is : ", users);
+    // console.log("All users is : ", users);
     return res.status(200).send(users);
   } catch (error) {
     console.log("getAllUsers error : ",error);

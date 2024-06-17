@@ -1,7 +1,7 @@
 const express = require("express");
 
 const cors = require("cors");
-const { default: mongoose } = require("mongoose");
+// const { default: mongoose } = require("mongoose");
 
 const app = express();
 
