@@ -9,7 +9,7 @@ const createPaymentLink = async (orderId) => {
     const order = await orderService.findOrderById(orderId);
 
     const paymentLinkRequest = {
-      amount: order.totalPrice * 100,
+      amount: order.totalDiscountedPrice * 100,
       currency: "INR",
       customer: {
         name: order.user.firstName + " " + order.user.lastName, //order.shippAddress.name,
@@ -21,7 +21,8 @@ const createPaymentLink = async (orderId) => {
         email: true,
       },
       reminder_enable: true,
-      callback_url: `http://localhost:3000/payment/${orderId}`,
+      // callback_url: `http://localhost:3000/payment/${orderId}`,
+      callback_url: `https://flapkart.in/payment/${orderId}`,
       callback_method: "get",
       // notes: {
       //     order_id: orderId

@@ -53,8 +53,9 @@ const Cart = require("../models/cart.model.js");
 //   return savedOrder;
 // }
 
+
 async function createOrder(user, shippAddress) {
-  console.log("user is____ : ", user, "shippAddress is : ", shippAddress);
+  // console.log("user is____ : ", user, "shippAddress is : ", shippAddress);
   let address;
 
   if (shippAddress._id) {
